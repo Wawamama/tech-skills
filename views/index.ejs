@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <title>TechOs</title>
+</head>
+<body>
+    <% console.log(devs) %>
+      <h1>Tech Level</h1>
+      <div class="container">
+
+        <% devs.forEach(dev => { 
+          const gender = dev.gender
+          const src = `./images/${gender}.svg`
+          const slug = dev.name.split(' ').join('-').toLowerCase()
+          const link = `/${slug}`
+          %>
+          <div class="card">
+            <div class="infos">
+              <img class='gender' src=<%= src %> alt="">
+              <div class="infos-txt">
+                  
+                  <h2><a href=<%= slug %>><%= dev.name %></a></h2>
+                  <p>
+                    <% dev.skills.forEach(skill => { %>
+                      <span class="skill"><%= skill.type %></span>
+                      <% }) %>
+                  </p>
+
+              </div>
+            </div>
+            <div class="progress">
+
+              <div class="blue-bar"><%= dev.overallskill %> %</div>
+
+            </div>
+          </div>
+        <% }) %>
+
+      </div>
+
+      <script src="./javascripts/progress.js"></script>
+</body>
+</html>

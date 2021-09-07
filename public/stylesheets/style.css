@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: rgb(95,15,149);
+  background: linear-gradient(90deg, rgba(95,15,149,1) 0%, rgba(72,245,198,1) 100%);
+}
+
+h1 {
+  background-color: #000;
+  width: 100vw;
+  color: #fff;
+  padding: 2vh;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vh;
+  max-width: 800px;
+  margin: 4rem auto;
+  gap: 3rem;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+/* .progress::before {
+  position: absolute;
+  content: '25%';
+  font-size: 0.6rem;
+  top: 0;
+  left: 0;
+  background-color: rgb(7, 87, 153);
+  width: 30%;
+  height: 100%;
+} */
+
+.blue-bar, .blue-single-bar {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(7, 87, 153);
+  font-size: 0.6rem;
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+.skill {
+  background-color: #333;
+  padding: 3px 7px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  max-width: 80px;
+  text-align: center;
+}
+
+.skill:hover {
+  background-color: #000;
+}
+
+.infos {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.infos-txt {
+  flex-grow: 1;
+}
+
+.gender {
+  height: 30px;
+  width: 30px;
+  margin-right: 1rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+

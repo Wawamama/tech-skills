@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <title>TechOs</title>
+</head>
+<body>
+    
+      <h1><a href='/'>Tech Level</a></h1>
+
+      <% 
+      const name = username.split('-')
+      const upperArr = []
+      name.forEach(word => {
+          word = word.charAt(0).toUpperCase() + word.slice(1)
+          upperArr.push(word)
+      })
+      const wantedUser = upperArr.join(' ')
+      
+      const user = devs.find(user => user.name == wantedUser)
+      
+
+      console.log(user)
+
+      %>
+      <div class="container">
+        <div class='card'>
+            <div class="infos">
+                <% const src = `./images/${user.gender}.svg` %>
+
+                <img class='gender' src=<%= src %> alt="">
+                <div class="infos-txt">
+                    <h2><%= user.name %></h2>
+
+                    <% user.skills.forEach(skill => { %>
+                    <div class='skill' style='margin: 1rem 0;'><%= skill.type %></div>    
+                    <div class='progress'>
+                        <div class="blue-bar"><%= skill.level %> %</div>
+                    </div>
+
+                    <% }) %>
+                </div>
+              
+              </div>
+        </div>
+
+      </div>
+
+      <script src="./javascripts/progress.js"></script>
+</body>
+</html>
